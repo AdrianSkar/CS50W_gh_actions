@@ -11,6 +11,7 @@ class Airport(models.Model):
 		return f"{self.city} ({self.code})"
 
 class Flight(models.Model):
+	id = models.AutoField(primary_key=True)
 	origin = models.ForeignKey(
 		Airport, on_delete=models.CASCADE, related_name="departures")
 	destination = models.ForeignKey(
