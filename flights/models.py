@@ -4,6 +4,7 @@ from django.db import models
 
 
 class Airport(models.Model):
+	id = models.AutoField(primary_key=True)
 	code = models.CharField(max_length=3)
 	city = models.CharField(max_length=64)
 
@@ -26,6 +27,7 @@ class Flight(models.Model):
 
 
 class Passenger(models.Model):
+	id = models.AutoField(primary_key=True)	
 	first = models.CharField(max_length=64)
 	last = models.CharField(max_length=64)
 	flights = models.ManyToManyField(
